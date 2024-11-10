@@ -12,6 +12,20 @@ void areafunc();
 void regularpolyfunc();
 void volumefunc();
 
+namespace area {
+    // Function to calculate the area of a square
+    double square(double length) {
+        return length * length;
+    }
+
+    // Function to calculate the area of a circle using its diameter
+    double diacircle(double diameter) {
+        double radius = diameter/2;
+        
+        return radius * radius * M_PI;
+    }
+}
+
 
 int main() {
     //All this main fuction does is start the mathprocess fuction and repeat it if yes and end it if no.
@@ -97,8 +111,7 @@ void areafunc() {
         cout << endl << "What is one length?" << endl;
         double lengthOfSquare;
         cin >> lengthOfSquare;
-        double area = lengthOfSquare * lengthOfSquare;
-        cout << endl << fixed << setprecision(9) << "The Area of the Square is " << area << endl;
+        cout << endl << fixed << setprecision(9) << "The Area of the Square is " << area::square(lengthOfSquare) << endl;
     }
     else if (whatIsThePoly == "Parallelogram" || whatIsThePoly == "parallelogram" || whatIsThePoly == "PARALLELOGRAM") {
         cout << endl << "What is the base of the parallelogram?" << endl;
@@ -173,13 +186,10 @@ void areafunc() {
             cout << endl << fixed << setprecision(9) << "The Area of the Circle is " << area << endl;
         }
         else if (radiusORdiameter == "diameter" || radiusORdiameter == "Diameter" || whatIsThePoly == "DIAMETER") {
-            cout << endl << "What is the diameter?" << endl;
+            cout << endl << "What is the diameter of the circle?" << endl;
             double diameter;
             cin >> diameter;
-            double radius = diameter/2;
-            
-            double area = radius * radius * M_PI;
-            cout << endl << fixed << setprecision(9) << "The Area of the Circle is " << area << endl;
+            cout << endl << fixed << setprecision(9) << "The Area of the Circle is " << area::diacircle(diameter) << endl;
         }
     }
     else if (whatIsThePoly == "Polygon" || whatIsThePoly == "polygon" || whatIsThePoly == "POLYGON") {
