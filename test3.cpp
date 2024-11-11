@@ -15,15 +15,33 @@ void volumefunc();
 namespace thestringanswer {
 
     void trianglesim( double triA);
+    void rectanglesim( double recA);
+    void squaresim( double squA);
+    void parallelogramsim( double parA);
+    void trapezoidsim( double traA);
+    void kitesim( double kitA);
+    void pentagonsim( double penA);
+    void hexagonsim( double hexA);
+    void diacirclesim( double diaA);
+    void radcirclesim( double radA);
+    void rhombussim( double rhoA);
 
 }
 
 namespace area {
     
-    double square(double length);
-    double diacircle(double diameter);
-    double radcircle(double radius);
+    double square();
+    double diacircle();
+    double radcircle();
     double triangle();
+    double rectangle();
+    double parallelogram();
+    double rhombus();
+    double trapezoid();
+    double kite();
+    double pentagon();
+    double hexagon();
+    void polygon(double &polA, int &numofsidesinpoly, double &lengthofaside);
 
 }
 
@@ -92,80 +110,31 @@ void areafunc() {
         thestringanswer::trianglesim(area::triangle());
     }
     else if (whatIsThePoly == "Rectangle" || whatIsThePoly == "rectangle" || whatIsThePoly == "RECTANGLE") {
-        cout << endl << "What is the width?" << endl;
-        double widthOfRectangle;
-        cin >> widthOfRectangle;
-        cout << endl << "What is the lenght?" << endl;
-        double lengthOfRectangle;
-        cin >> lengthOfRectangle;
-        double area = widthOfRectangle * lengthOfRectangle;
-        cout << endl << fixed << setprecision(9) << "The Area of the Rectangle is " << area << endl;
+        thestringanswer::rectanglesim(area::rectangle());
     }
     else if (whatIsThePoly == "Square" || whatIsThePoly == "square" || whatIsThePoly == "SQUARE") {
-        cout << endl << "What is one length?" << endl;
-        double lengthOfSquare;
-        cin >> lengthOfSquare;
-        cout << endl << fixed << setprecision(9) << "The Area of the Square is " << area::square(lengthOfSquare) << endl;
+        thestringanswer::squaresim(area::square());
     }
     else if (whatIsThePoly == "Parallelogram" || whatIsThePoly == "parallelogram" || whatIsThePoly == "PARALLELOGRAM") {
-        cout << endl << "What is the base of the parallelogram?" << endl;
-        double baseOfParallelogram;
-        cin >> baseOfParallelogram;
-        cout << endl << "What is the height of the parallelogram?" << endl;
-        double heightOfParallelogram;
-        cin >> heightOfParallelogram;
-        double area = baseOfParallelogram * heightOfParallelogram;
-        cout << endl << fixed << setprecision(9) << "The area of the parallelogram is " << area << endl;
+        thestringanswer::parallelogramsim(area::parallelogram());
         
     }
     else if (whatIsThePoly == "Rhombus" || whatIsThePoly == "rhombus" || whatIsThePoly == "RHOMBUS"){
-        cout << endl << "What is the length of one diagonal?" << endl;
-        double lengthdia1;
-        cin >> lengthdia1;
-        cout << endl << "What is the length of the other diagonal?" << endl;
-        double lengthdia2;
-        cin >> lengthdia2;
-        double area = (lengthdia1 * lengthdia2)/2;
-        cout << endl << fixed << setprecision(9) << "The area of the rhombus is " << area << endl;
+        thestringanswer::rhombussim(area::rhombus());
         
     }
     else if (whatIsThePoly == "Trapezoid" || whatIsThePoly == "trapezoid" || whatIsThePoly == "TRAPEZOID") {
-        cout << endl << "What is the length of the shorter base?" << endl;
-        double sbase;
-        cin >> sbase;
-        cout << endl << "What is the length of the longer base?" << endl;
-        double lbase;
-        cin >> lbase;
-        cout << endl << "What is the height of the trapezoid?" << endl;
-        double heightTrap;
-        cin >> heightTrap;
-        double area = ((sbase + lbase)/2) * heightTrap;
-        cout << endl << fixed << setprecision(9) << "The area of the trapezoid is " << area << endl;
+        thestringanswer::trapezoidsim(area::trapezoid());
     }
     else if (whatIsThePoly == "Kite" || whatIsThePoly == "kite" || whatIsThePoly == "KITE"){
-        cout << endl << "What is the length of one diagonal?" << endl;
-        double lengthdia1;
-        cin >> lengthdia1;
-        cout << endl << "What is the length of the other diagonal?" << endl;
-        double lengthdia2;
-        cin >> lengthdia2;
-        double area = (lengthdia1 * lengthdia2)/2;
-        cout << endl << fixed << setprecision(9) << "The area of the kite is " << area << endl;
+        thestringanswer::kitesim(area::kite());
         
     }
     else if (whatIsThePoly == "Pentagon" || whatIsThePoly == "pentagon" || whatIsThePoly == "PENTAGON") {
-        cout << endl << "What is the length of one side?" << endl;
-        double lengthofsidepen;
-        cin >> lengthofsidepen;
-        double area = (lengthofsidepen * lengthofsidepen) * (1.0/4.0) * (sqrt(5 * (5 + (2 * (sqrt(5))))));
-        cout << endl << fixed << setprecision(9) << "The area of the pentagon is " << area << endl;
+        thestringanswer::pentagonsim(area::pentagon());
     }
     else if (whatIsThePoly == "Hexagon" || whatIsThePoly == "hexagon" || whatIsThePoly == "HEXAGON") {
-        cout << endl << "What is the length of one side?" << endl;
-        double lengthofsidehex;
-        cin >> lengthofsidehex;
-        double area = (lengthofsidehex * lengthofsidehex) * ((3 * (sqrt(3)))/2);
-        cout << endl << fixed << setprecision(9) << "The area of the hexagon is " << area << endl;
+        thestringanswer::hexagonsim(area::hexagon());
     }
     else if (whatIsThePoly == "Circle" || whatIsThePoly == "circle" || whatIsThePoly == "CIRCLE") {
         cout << endl << "With the radius or diameter?" << endl;
@@ -173,16 +142,10 @@ void areafunc() {
         cin >> radiusORdiameter;
         
         if (radiusORdiameter == "radius" || radiusORdiameter == "Radius" || whatIsThePoly == "RADIUS") {
-            cout << endl << "What is the radius?" << endl;
-            double radius;
-            cin >> radius;
-            cout << endl << fixed << setprecision(9) << "The Area of the Circle is " << area::radcircle(radius) << endl;
+            thestringanswer::radcirclesim(area::radcircle());
         }
         else if (radiusORdiameter == "diameter" || radiusORdiameter == "Diameter" || whatIsThePoly == "DIAMETER") {
-            cout << endl << "What is the diameter of the circle?" << endl;
-            double diameter;
-            cin >> diameter;
-            cout << endl << fixed << setprecision(9) << "The Area of the Circle is " << area::diacircle(diameter) << endl;
+            thestringanswer::diacirclesim(area::diacircle());
         }
     }
     else if (whatIsThePoly == "Polygon" || whatIsThePoly == "polygon" || whatIsThePoly == "POLYGON") {
@@ -190,7 +153,11 @@ void areafunc() {
         string theyesorno;
         cin >> theyesorno;
         if (theyesorno == "Yes" || theyesorno == "yes" || theyesorno == "YES") {
-            regularpolyfunc();
+            double polA, lengthofaside;
+            int numofsidesinpoly;
+            area::polygon(polA, numofsidesinpoly, lengthofaside);
+            cout << endl << "The area of the polygon with " << numofsidesinpoly << " sides and " << lengthofaside;
+            cout << fixed << setprecision(9)<< " side length is " << polA << endl;
         }
         else if (theyesorno == "No" || theyesorno == "no" || theyesorno == "NO") {
             cout << endl << "Sorry but I can't do irregular polygons" << endl;
@@ -208,28 +175,6 @@ void areafunc() {
 }
 
 
-
-
-void regularpolyfunc() {
-    cout << endl << "How many sides does the regular polygon have?" << endl;
-    int numofsidesinpoly;
-    cin >> numofsidesinpoly;
-    
-    cout << endl << "Length of one side?" << endl;
-    double lengthofaside;
-    cin >> lengthofaside;
-    
-    double interiorangles;
-    interiorangles = (((numofsidesinpoly - 2) * 180)/static_cast<double>(numofsidesinpoly));
-    
-    double interiorradians = (M_PI/180.0) * interiorangles;
-    
-    double area = (numofsidesinpoly) * (0.5) * (lengthofaside) * ((lengthofaside/2.0) * tan(interiorradians/2.0));
-    
-    cout << endl << "The area of the polygon with " << numofsidesinpoly << " sides and " << lengthofaside;
-    cout << fixed << setprecision(9)<< " side length is " << area << endl;
-    
-}
 
 
 
@@ -272,6 +217,36 @@ namespace thestringanswer {
     void trianglesim( double triA) {
         cout << endl << fixed << setprecision(9) << "The area of the triangle is " << triA << endl;
     }
+    void rectanglesim( double recA) {
+        cout << endl << fixed << setprecision(9) << "The area of the rectangle is " << recA << endl;
+    }
+    void squaresim( double squA) {
+        cout << endl << fixed << setprecision(9) << "The area of the square is " << squA << endl;
+    }
+    void parallelogramsim( double parA) {
+        cout << endl << fixed << setprecision(9) << "The area of the parallelogram is " << parA << endl;
+    }
+    void trapezoidsim( double traA) {
+        cout << endl << fixed << setprecision(9) << "The area of the trapezoid is " << traA << endl;
+    }
+    void kitesim( double kitA) {
+        cout << endl << fixed << setprecision(9) << "The area of the kite is " << kitA << endl;
+    }
+    void pentagonsim( double penA) {
+        cout << endl << fixed << setprecision(9) << "The area of the pentagon is " << penA << endl;
+    }
+    void hexagonsim( double hexA) {
+        cout << endl << fixed << setprecision(9) << "The area of the hexagon is " << hexA << endl;
+    }
+    void diacirclesim( double diaA) {
+        cout << endl << fixed << setprecision(9) << "The area of the circle is " << diaA << endl;
+    }
+    void radcirclesim( double radA) {
+        cout << endl << fixed << setprecision(9) << "The area of the circle is " << radA << endl;
+    }
+    void rhombussim( double rhoA) {
+        cout << endl << fixed << setprecision(9) << "The area of the rhombus is " << rhoA << endl;
+    }
 
 
 
@@ -279,24 +254,29 @@ namespace thestringanswer {
 
 
 namespace area {
-    // Function to calculate the area of a square
-    double square(double length) {
-        return length * length;
+    
+    double square() {
+        cout << endl << "What is one length?" << endl;
+        double lengthOfSquare;
+        cin >> lengthOfSquare;
+        return lengthOfSquare * lengthOfSquare;
     }
 
-    // Function to calculate the area of a circle using its diameter
-    double diacircle(double diameter) {
-        double radius = diameter/2;
-        
+    double diacircle() {
+        cout << endl << "What is the diameter of the circle?" << endl;
+        double diameter;
+        cin >> diameter;
+        double radius = diameter/2.0;
         return radius * radius * M_PI;
     }
-
-    // Function to calculate the area of a circle using its radius
-    double radcircle(double radius) {
+    
+    double radcircle() {
+        cout << endl << "What is the radius?" << endl;
+        double radius;
+        cin >> radius;
         return radius * radius * M_PI;
     }
-
-    // Function for area of triangle
+    
     double triangle() {
         cout << endl << "What is the base?" << endl;
         double baseOfTriangle;
@@ -305,5 +285,89 @@ namespace area {
         double heightOfTriangle;
         cin >> heightOfTriangle;
         return baseOfTriangle * heightOfTriangle * 0.5;
+    }
+
+    double rectangle() {
+        cout << endl << "What is the width?" << endl;
+        double widthOfRectangle;
+        cin >> widthOfRectangle;
+        cout << endl << "What is the lenght?" << endl;
+        double lengthOfRectangle;
+        cin >> lengthOfRectangle;
+        return widthOfRectangle * lengthOfRectangle;
+    }
+
+    double parallelogram() {
+        cout << endl << "What is the base of the parallelogram?" << endl;
+        double baseOfParallelogram;
+        cin >> baseOfParallelogram;
+        cout << endl << "What is the height of the parallelogram?" << endl;
+        double heightOfParallelogram;
+        cin >> heightOfParallelogram;
+        return baseOfParallelogram * heightOfParallelogram;
+    }
+
+    double rhombus() {
+        cout << endl << "What is the length of one diagonal?" << endl;
+        double lengthdia1;
+        cin >> lengthdia1;
+        cout << endl << "What is the length of the other diagonal?" << endl;
+        double lengthdia2;
+        cin >> lengthdia2;
+        return (lengthdia1 * lengthdia2)/2.0;
+    }
+
+    double trapezoid() {
+        cout << endl << "What is the length of the shorter base?" << endl;
+        double sbase;
+        cin >> sbase;
+        cout << endl << "What is the length of the longer base?" << endl;
+        double lbase;
+        cin >> lbase;
+        cout << endl << "What is the height of the trapezoid?" << endl;
+        double heightTrap;
+        cin >> heightTrap;
+        return ((sbase + lbase)/2.0) * heightTrap;
+    }
+
+    double kite() {
+        cout << endl << "What is the length of one diagonal?" << endl;
+        double lengthdia1;
+        cin >> lengthdia1;
+        cout << endl << "What is the length of the other diagonal?" << endl;
+        double lengthdia2;
+        cin >> lengthdia2;
+        return (lengthdia1 * lengthdia2)/2.0;
+    }
+
+    double pentagon() {
+        cout << endl << "What is the length of one side?" << endl;
+        double lengthofsidepen;
+        cin >> lengthofsidepen;
+        return (lengthofsidepen * lengthofsidepen) * (1.0/4.0) * (sqrt(5 * (5 + (2 * (sqrt(5))))));
+    }
+
+    double hexagon() {
+        cout << endl << "What is the length of one side?" << endl;
+        double lengthofsidehex;
+        cin >> lengthofsidehex;
+        return (lengthofsidehex * lengthofsidehex) * ((3 * (sqrt(3)))/2);
+    }
+
+    void polygon(double &polA, int &numofsidesinpoly, double &lengthofaside) {
+        cout << endl << "How many sides does the regular polygon have?" << endl;
+        int numofsidesinpoly;
+        cin >> numofsidesinpoly;
+    
+        cout << endl << "Length of one side?" << endl;
+        double lengthofaside;
+        cin >> lengthofaside;
+    
+        double interiorangles;
+        interiorangles = (((numofsidesinpoly - 2) * 180)/static_cast<double>(numofsidesinpoly));
+    
+        double interiorradians = (M_PI/180.0) * interiorangles;
+    
+        double polA = (numofsidesinpoly) * (0.5) * (lengthofaside) * ((lengthofaside/2.0) * tan(interiorradians/2.0));
     }
 }
