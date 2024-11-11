@@ -14,42 +14,17 @@ void volumefunc();
 
 namespace thestringanswer {
 
-    void trianglesim( double triA) {
-        cout << endl << fixed << setprecision(9) << "The area of the triangle is " << triA << endl;
-    }
-
-
+    void trianglesim( double triA);
 
 }
 
 namespace area {
-    // Function to calculate the area of a square
-    double square(double length) {
-        return length * length;
-    }
+    
+    double square(double length);
+    double diacircle(double diameter);
+    double radcircle(double radius);
+    double triangle();
 
-    // Function to calculate the area of a circle using its diameter
-    double diacircle(double diameter) {
-        double radius = diameter/2;
-        
-        return radius * radius * M_PI;
-    }
-
-    // Function to calculate the area of a circle using its radius
-    double radcircle(double radius) {
-        return radius * radius * M_PI;
-    }
-
-    // Function for area of triangle
-    double triangle() {
-        cout << endl << "What is the base?" << endl;
-        double baseOfTriangle;
-        cin >> baseOfTriangle;
-        cout << endl << "What is the height?" << endl;
-        double heightOfTriangle;
-        cin >> heightOfTriangle;
-        return baseOfTriangle * heightOfTriangle * 0.5;
-    }
 }
 
 
@@ -289,4 +264,46 @@ void volumefunc() {
     }
 
 
+}
+
+
+namespace thestringanswer {
+
+    void trianglesim( double triA) {
+        cout << endl << fixed << setprecision(9) << "The area of the triangle is " << triA << endl;
+    }
+
+
+
+}
+
+
+namespace area {
+    // Function to calculate the area of a square
+    double square(double length) {
+        return length * length;
+    }
+
+    // Function to calculate the area of a circle using its diameter
+    double diacircle(double diameter) {
+        double radius = diameter/2;
+        
+        return radius * radius * M_PI;
+    }
+
+    // Function to calculate the area of a circle using its radius
+    double radcircle(double radius) {
+        return radius * radius * M_PI;
+    }
+
+    // Function for area of triangle
+    double triangle() {
+        cout << endl << "What is the base?" << endl;
+        double baseOfTriangle;
+        cin >> baseOfTriangle;
+        cout << endl << "What is the height?" << endl;
+        double heightOfTriangle;
+        cin >> heightOfTriangle;
+        return baseOfTriangle * heightOfTriangle * 0.5;
+    }
 }
