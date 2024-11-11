@@ -356,11 +356,9 @@ namespace area {
 
     void polygon(double &polA, int &numofsidesinpoly, double &lengthofaside) {
         cout << endl << "How many sides does the regular polygon have?" << endl;
-        int numofsidesinpoly;
         cin >> numofsidesinpoly;
     
         cout << endl << "Length of one side?" << endl;
-        double lengthofaside;
         cin >> lengthofaside;
     
         double interiorangles;
@@ -368,6 +366,6 @@ namespace area {
     
         double interiorradians = (M_PI/180.0) * interiorangles;
     
-        double polA = (numofsidesinpoly) * (0.5) * (lengthofaside) * ((lengthofaside/2.0) * tan(interiorradians/2.0));
+        polA = (numofsidesinpoly) * (0.5) * (lengthofaside) * ((lengthofaside/2.0) * tan(interiorradians/2.0));
     }
 }
