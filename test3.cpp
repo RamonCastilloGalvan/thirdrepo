@@ -40,6 +40,9 @@ namespace area {
         cin >> heightOfTriangle;
         return baseOfTriangle * heightOfTriangle * 0.5;
     }
+    void trianglesim( double triA) {
+        cout << endl << fixed << setprecision(9) << "The Area of the Rectangle is " << triA << endl;
+    }
 }
 
 
@@ -104,7 +107,7 @@ void areafunc() {
     cin >> whatIsThePoly;
     
     if (whatIsThePoly == "Triangle" || whatIsThePoly == "triangle" || whatIsThePoly == "TRIANGLE") {
-        cout << endl << fixed << setprecision(9) << "The Area of the Triangle is " << area::triangle() << endl;
+        area::trianglesim(area::triangle());
     }
     else if (whatIsThePoly == "Rectangle" || whatIsThePoly == "rectangle" || whatIsThePoly == "RECTANGLE") {
         cout << endl << "What is the width?" << endl;
