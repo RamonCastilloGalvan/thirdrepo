@@ -12,6 +12,16 @@ void areafunc();
 void regularpolyfunc();
 void volumefunc();
 
+namespace thestringanswer {
+
+    void trianglesim( double triA) {
+        cout << endl << fixed << setprecision(9) << "The area of the triangle is " << triA << endl;
+    }
+
+
+
+}
+
 namespace area {
     // Function to calculate the area of a square
     double square(double length) {
@@ -39,9 +49,6 @@ namespace area {
         double heightOfTriangle;
         cin >> heightOfTriangle;
         return baseOfTriangle * heightOfTriangle * 0.5;
-    }
-    void trianglesim( double triA) {
-        cout << endl << fixed << setprecision(9) << "The Area of the Rectangle is " << triA << endl;
     }
 }
 
@@ -107,7 +114,7 @@ void areafunc() {
     cin >> whatIsThePoly;
     
     if (whatIsThePoly == "Triangle" || whatIsThePoly == "triangle" || whatIsThePoly == "TRIANGLE") {
-        area::trianglesim(area::triangle());
+        thestringanswer::trianglesim(area::triangle());
     }
     else if (whatIsThePoly == "Rectangle" || whatIsThePoly == "rectangle" || whatIsThePoly == "RECTANGLE") {
         cout << endl << "What is the width?" << endl;
