@@ -24,6 +24,16 @@ namespace area {
         
         return radius * radius * M_PI;
     }
+
+    // Function to calculate the area of a circle using its radius
+    double radcircle(double radius) {
+        return radius * radius * M_PI;
+    }
+
+    // Function for area of triangle
+    double triangle(double base, double height) {
+        return base * height * 0.5;
+    }
 }
 
 
@@ -94,8 +104,7 @@ void areafunc() {
         cout << endl << "What is the height?" << endl;
         double heightOfTriangle;
         cin >> heightOfTriangle;
-        double area = 0.5 * baseOfTriangle * heightOfTriangle;
-        cout << endl << fixed << setprecision(9) << "The Area of the Triangle is " << area << endl;
+        cout << endl << fixed << setprecision(9) << "The Area of the Triangle is " << area::triangle( baseOfTriangle, heightOfTriangle) << endl;
     }
     else if (whatIsThePoly == "Rectangle" || whatIsThePoly == "rectangle" || whatIsThePoly == "RECTANGLE") {
         cout << endl << "What is the width?" << endl;
@@ -182,8 +191,7 @@ void areafunc() {
             cout << endl << "What is the radius?" << endl;
             double radius;
             cin >> radius;
-            double area = radius * radius * M_PI;
-            cout << endl << fixed << setprecision(9) << "The Area of the Circle is " << area << endl;
+            cout << endl << fixed << setprecision(9) << "The Area of the Circle is " << area::radcircle(radius) << endl;
         }
         else if (radiusORdiameter == "diameter" || radiusORdiameter == "Diameter" || whatIsThePoly == "DIAMETER") {
             cout << endl << "What is the diameter of the circle?" << endl;
