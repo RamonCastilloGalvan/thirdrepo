@@ -31,8 +31,14 @@ namespace area {
     }
 
     // Function for area of triangle
-    double triangle(double base, double height) {
-        return base * height * 0.5;
+    double triangle() {
+        cout << endl << "What is the base?" << endl;
+        double baseOfTriangle;
+        cin >> baseOfTriangle;
+        cout << endl << "What is the height?" << endl;
+        double heightOfTriangle;
+        cin >> heightOfTriangle;
+        return baseOfTriangle * heightOfTriangle * 0.5;
     }
 }
 
@@ -98,13 +104,7 @@ void areafunc() {
     cin >> whatIsThePoly;
     
     if (whatIsThePoly == "Triangle" || whatIsThePoly == "triangle" || whatIsThePoly == "TRIANGLE") {
-        cout << endl << "What is the base?" << endl;
-        double baseOfTriangle;
-        cin >> baseOfTriangle;
-        cout << endl << "What is the height?" << endl;
-        double heightOfTriangle;
-        cin >> heightOfTriangle;
-        cout << endl << fixed << setprecision(9) << "The Area of the Triangle is " << area::triangle( baseOfTriangle, heightOfTriangle) << endl;
+        cout << endl << fixed << setprecision(9) << "The Area of the Triangle is " << area::triangle() << endl;
     }
     else if (whatIsThePoly == "Rectangle" || whatIsThePoly == "rectangle" || whatIsThePoly == "RECTANGLE") {
         cout << endl << "What is the width?" << endl;
